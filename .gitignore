@@ -1,0 +1,59 @@
+# Node modules
+/node_modules
+
+# Xcode
+/ios/build
+/ios/*.xcworkspace
+/ios/Pods
+/ios/Podfile.lock
+
+# Android
+/android/build
+/android/app/build
+/android/.gradle
+/android/local.properties
+/android/gradle-wrapper.properties
+/android/gradle
+
+# Expo (if applicable)
+/.expo
+/.easychangeset
+/web-build
+
+# macOS
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.lock
+
+# Dependency directories
+/vendor
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Bundled files
+*.bundle
+
+# Metro bundler cache
+/.metro
+
+# Yarn specific
+yarn-error.log
+
+# VS Code
+.vscode/
+
+# IntelliJ IDEA
+.idea/
+
+# Gradle cache
+.gradle/
