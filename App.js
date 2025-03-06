@@ -8,6 +8,7 @@ import {
   FlatList,
   Button,
 } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 import GoalInput from './components/GoalInput';
 import GoalItem from './components/GoalItem';
@@ -43,38 +44,41 @@ export default function App() {
   }
 
   return (
-    <View style={styles.appContainer}>
-      <Button 
-        title="Add New Goal"
-        color="#b180f0"
-        onPress={startAddGoalHandler} 
-      />
-      <GoalInput 
-        isVisible={isModalVisible} 
-        onCancel={endAddGoalHandler}
-        onAddGoal={(goal) => addGoalHandler(goal)} 
-      />
-      <View style={styles.goalListContainer}>
-        <FlatList
-          data={goals}
-          keyExtractor={(item) => item.id}
-          renderItem={(itemData) => (
-            <GoalItem 
-              text={itemData.item.value} 
-              onDeleteGoal={() => deleteGoalHandler(itemData.item.id)} 
-            />
-          )}
+    <>
+      <StatusBar style='light' />
+      <View style={styles.appContainer}>
+        <Button 
+          title="Add New Goal"
+          color="#b180f0"
+          onPress={startAddGoalHandler} 
         />
-        {/* <ScrollView>
-          {goals.map((goal) => (
-            <GoalItem 
-              key={goal.id} 
-              text={goal.value} 
-            />
-          ))}
-        </ScrollView> */}
+        <GoalInput 
+          isVisible={isModalVisible} 
+          onCancel={endAddGoalHandler}
+          onAddGoal={(goal) => addGoalHandler(goal)} 
+        />
+        <View style={styles.goalListContainer}>
+          <FlatList
+            data={goals}
+            keyExtractor={(item) => item.id}
+            renderItem={(itemData) => (
+              <GoalItem 
+                text={itemData.item.value} 
+                onDeleteGoal={() => deleteGoalHandler(itemData.item.id)} 
+              />
+            )}
+          />
+          {/* <ScrollView>
+            {goals.map((goal) => (
+              <GoalItem 
+                key={goal.id} 
+                text={goal.value} 
+              />
+            ))}
+          </ScrollView> */}
+        </View>
       </View>
-    </View>
+    </>
   );
 }
 
