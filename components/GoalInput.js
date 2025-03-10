@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { 
     StyleSheet, 
     View,
-    Text,
     TextInput, 
     Button,
     Modal,
@@ -38,7 +37,7 @@ export default function GoalInput({ isVisible, onAddGoal, onCancel }) {
             <View style={styles.modal}>
                 <View style={styles.modalContainer}>
                     <Image 
-                        source={require('../assets/images/goal.png')} 
+                        source={require('../assets/images/goal.png')}
                         style={styles.logo}
                     />
                     <TextInput 
